@@ -1,75 +1,122 @@
 <template>
   <v-container class="fill-height">
     <v-responsive class="align-center text-center fill-height">
-      <v-img height="300" src="@/assets/logo.svg" />
+      <!-- <v-img height="300" src="@/assets/logo.svg" /> -->
 
-      <div class="text-body-2 font-weight-light mb-n1">Welcome to</div>
+      <QuestionVue v-if="!isCorrect" @correct="isCorrect = true" />
+      <div v-if="isCorrect">
+        <div class="sketchy py-4 px-10" v-html="texts[index]"></div>
 
-      <h1 class="text-h2 font-weight-bold">Vuetify</h1>
+        <div class="py-14" />
 
-      <div class="py-14" />
-
-      <v-row class="d-flex align-center justify-center">
-        <v-col cols="auto">
-          <v-btn
-            href="https://vuetifyjs.com/components/all/"
-            min-width="164"
-            rel="noopener noreferrer"
-            target="_blank"
-            variant="text"
-          >
-            <v-icon
-              icon="mdi-view-dashboard"
-              size="large"
-              start
-            />
-
-            Components
-          </v-btn>
-        </v-col>
-
-        <v-col cols="auto">
-          <v-btn
-            color="primary"
-            href="https://vuetifyjs.com/introduction/why-vuetify/#feature-guides"
-            min-width="228"
-            rel="noopener noreferrer"
-            size="x-large"
-            target="_blank"
-            variant="flat"
-          >
-            <v-icon
-              icon="mdi-speedometer"
-              size="large"
-              start
-            />
-
-            Get Started
-          </v-btn>
-        </v-col>
-
-        <v-col cols="auto">
-          <v-btn
-            href="https://community.vuetifyjs.com/"
-            min-width="164"
-            rel="noopener noreferrer"
-            target="_blank"
-            variant="text"
-          >
-            <v-icon
-              icon="mdi-account-group"
-              size="large"
-              start
-            />
-
-            Community
-          </v-btn>
-        </v-col>
-      </v-row>
+        <!-- <v-row class="d-flex align-center justify-center"> -->
+        <!-- <v-col cols="auto"> -->
+        <v-btn
+          color="white"
+          min-width="228"
+          rel="noopener noreferrer"
+          size="x-large"
+          :disabled="index === texts.length - 1"
+          @click="nextText"
+          :loading="isloading"
+        >
+          ต่อไป
+        </v-btn>
+        <!-- </v-col> -->
+        <!-- </v-row> -->
+      </div>
     </v-responsive>
   </v-container>
 </template>
 
-<script setup>
-  //
+<script>
+import QuestionVue from "./Question.vue";
+export default {
+  components: {
+    QuestionVue,
+  },
+  data() {
+    return {
+      texts: [
+        "หวัดดี <br/> Chalitzz🦌",
+        "จบแล้ว",
+        "หยอก",
+        "มีไรจะบอก",
+        "...",
+        "พร้อมยัง",
+        "...",
+        "พร้อมนะ",
+        "...",
+        "สุขสันต์วันเกิดนะ 🥰 ",
+        "ปีที่ผ่านมาเธอเก่ง<br/>มากๆเลย <br/> รู้ตัวไหม",
+        "ขอให้ปีนี้ และปีต่อๆไป เป็นปีที่ดี",
+        "มีความสุขกับการสอนหนังสือ",
+        "มีความสุขกับการทำงาน",
+        "มีความสุขในทุกๆเรื่อง",
+        "ขอให้เจอแต่สิ่งดีๆ",
+        "...",
+        "รักนะ ❤️",
+        "...",
+        "รักมาก",
+        "...",
+        "รักที่สุด",
+        "...",
+        "รักไม่ไหว",
+        "ขอบคุณที่ผ่านมาให้รัก",
+        "ถึงแม้จะมีบางครั้งที่ทำให้เธอต้องเสียใจบ้าง",
+        "หรืออาจจะไม่บ้าง <br/> แต่บ่อย55555",
+        "แต่เราก็ผ่านมันมาได้",
+        "ดีใจที่ได้เจอ",
+        "ดีใจที่ได้มาอยู่<br/>ใกล้ๆกัน",
+        "ดีใจที่ได้ไปเที่ยวด้วยกันบ่อยๆ",
+        "ดีใจที่ได้ไปกินอะไร<br/>อร่อยๆด้วยกัน",
+      ],
+      index: 0,
+
+      isloading: false,
+      isCorrect: false,
+    };
+  },
+  mounted() {
+    // this.index = this.texts.length - 1;
+  },
+  methods: {
+    nextText() {
+      this.isloading = true;
+      setTimeout(() => {
+        this.index += 1;
+        this.isloading = false;
+      }, 0);
+    },
+  },
+};
 </script>
+
+<script setup>
+//
+</script>
+
+<style lang="scss">
+.sketchy {
+  display: inline-block;
+  border: 3px solid #333333;
+  font-size: 2.5rem;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  background: #ffffff;
+  position: relative;
+  font-weight: 400;
+
+  &::before {
+    content: "";
+    border: 2px solid #353535;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+    border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+  }
+}
+</style>

@@ -9,3 +9,12 @@
 <script setup>
   import HelloWorld from '@/components/HelloWorld.vue'
 </script>
+
+<style>
+.v-main{
+  background: #f6f5ee;
+}
+* {
+  font-family: 'Itim','Prompt' !important;
+}
+</style>

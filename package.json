@@ -11,13 +11,15 @@
     "@mdi/font": "7.0.96",
     "roboto-fontface": "*",
     "vue": "^3.2.0",
+    "vue-youtube-embed": "^2.2.2",
     "vuetify": "^3.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "execa": "latest",
+    "sass": "^1.69.5",
     "unplugin-fonts": "^1.0.3",
     "vite": "^4.2.0",
-    "vite-plugin-vuetify": "^1.0.0",
-    "execa": "latest"
+    "vite-plugin-vuetify": "^1.0.0"
   }
 }
