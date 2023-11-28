@@ -11,7 +11,6 @@
     "@mdi/font": "7.0.96",
     "roboto-fontface": "*",
     "vue": "^3.2.0",
-    "vue-youtube-embed": "^2.2.2",
     "vuetify": "^3.0.0"
   },
   "devDependencies": {
