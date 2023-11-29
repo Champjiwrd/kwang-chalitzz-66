@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>วันแรกที่เราเจอกัน</div>
-    <v-subheader>เช่น 02-11-2566</v-subheader>
+    <v-subheader>วัน-เดือน-พ.ศ</v-subheader>
     <v-otp-input
       v-model:model-value="answer"
       length="8"
