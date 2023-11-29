@@ -75,18 +75,18 @@ export default {
         "ดีใจที่ได้ไปเที่ยวด้วยกันบ่อยๆ",
         "ดีใจที่ได้ไปกินอะไร<br/>อร่อยๆด้วยกัน",
         "รักนะ ❤️",
-        `<img style='height:30vh; border-radius:10px' src='https://github.com/Champjiwrd/kwang-chalitzz-66/blob/gh-pages/img/image1.jpg' /><div>❤️❤️❤️</div>`,
+        `<img style='height:30vh; border-radius:10px' src='https://champjiwrd.github.io/kwang-chalitzz-66/img/image1.jpg' /><div>❤️❤️❤️</div>`,
       ],
       index: 0,
 
       isloading: false,
-      isCorrect: true,
+      isCorrect: false,
 
       duration: 50,
     };
   },
   mounted() {
-    this.index = this.texts.length - 1;
+    // this.index = this.texts.length - 1;
   },
   methods: {
     nextText() {
