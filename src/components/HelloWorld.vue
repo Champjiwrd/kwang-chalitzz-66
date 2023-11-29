@@ -75,7 +75,7 @@ export default {
         "ดีใจที่ได้ไปเที่ยวด้วยกันบ่อยๆ",
         "ดีใจที่ได้ไปกินอะไร<br/>อร่อยๆด้วยกัน",
         "รักนะ ❤️",
-        "<img style='height:30vh; border-radius:10px' src='src/assets/image1.jpg'/><div>❤️❤️❤️</div>",
+        "<img style='height:30vh; border-radius:10px' src='~src/assets/image1.jpg'/><div>❤️❤️❤️</div>",
       ],
       index: 0,
 
